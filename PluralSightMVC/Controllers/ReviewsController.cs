@@ -9,6 +9,14 @@ namespace PluralSightMVC.Controllers
 {
     public class ReviewsController : Controller
     {
+        [ChildActionOnly]
+        public ActionResult BestReview()
+        {
+            var bestReview = reviews.OrderBy(r => r.Rating).FirstOrDefault();
+
+            return PartialView("_Review", bestReview);
+        }
+
         // GET: Reviews
         public ActionResult Index()
         {
@@ -48,23 +56,22 @@ namespace PluralSightMVC.Controllers
         // GET: Reviews/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+
+            var review = reviews.Single(r => r.Id == id);
+            return View(review);
         }
 
         // POST: Reviews/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
-            try
+            var review = reviews.Single(r => r.Id == id);
+            if (TryUpdateModel(review))
             {
-                // TODO: Add update logic here
-
+                //.. save
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            return View(review);
         }
 
         // GET: Reviews/Delete/5
