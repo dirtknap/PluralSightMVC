@@ -12,9 +12,7 @@ namespace PluralSightMVC.Controllers
         [ChildActionOnly]
         public ActionResult BestReview()
         {
-            var bestReview = reviews.OrderBy(r => r.Rating).FirstOrDefault();
-
-            return PartialView("_Review", bestReview);
+            return View();
         }
 
         // GET: Reviews
@@ -98,47 +96,47 @@ namespace PluralSightMVC.Controllers
 
 
         // test data
-        static List<ResturantReview> reviews = new List<ResturantReview>
+        static List<Resturant> reviews = new List<Resturant>
         {
-            new ResturantReview()
+            new Resturant()
             {
                 Id = 1,
                 Name = "test1",
                 City = "city1",
                 Country = "country1",
-                Rating = 1
+  
             },
-            new ResturantReview()
+            new Resturant()
             {
                 Id = 2,
                 Name = "test2",
                 City = "city2",
                 Country = "country2",
-                Rating = 2
+
             },
-            new ResturantReview()
+            new Resturant()
             {
                 Id = 3,
                 Name = "test3",
                 City = "city3",
                 Country =  "country3",
-                Rating = 3
+        
             },
-            new ResturantReview()
+            new Resturant()
             {
                 Id = 4,
                 Name = "test4",
                 City = "city4",
                 Country =  "country4",
-                Rating = 4
+       
             },
-            new ResturantReview()
+            new Resturant()
             {
                 Id = 5,
                 Name = "test5",
                 City = "city5",
                 Country = "country5",
-                Rating = 5
+ 
             },
         };
     }

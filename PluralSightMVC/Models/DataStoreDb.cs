@@ -9,6 +9,11 @@ namespace PluralSightMVC.Models
 {
     class DataStoreDb : DbContext
     {
+        public DataStoreDb() : base("name=DefaultConnection")
+        {
+            
+        }
+
         public DbSet<Resturant> Resturants { get; set; }
         public DbSet<ResturantReview> Reviews { get; set; }
 
