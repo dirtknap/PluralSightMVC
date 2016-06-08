@@ -8,7 +8,7 @@ namespace PluralSightMVC.Migrations
         public override void Up()
         {
             CreateTable(
-                "dbo.Resturants",
+                "dbo.Restaurants",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
@@ -19,27 +19,27 @@ namespace PluralSightMVC.Migrations
                 .PrimaryKey(t => t.Id);
             
             CreateTable(
-                "dbo.ResturantReviews",
+                "dbo.RestaurantReviews",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Rating = c.Int(nullable: false),
                         Body = c.String(),
+                        ReviewerName = c.String(),
                         RestaurantId = c.Int(nullable: false),
-                        Resturant_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Resturants", t => t.Resturant_Id)
-                .Index(t => t.Resturant_Id);
+                .ForeignKey("dbo.Restaurants", t => t.RestaurantId, cascadeDelete: true)
+                .Index(t => t.RestaurantId);
             
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.ResturantReviews", "Resturant_Id", "dbo.Resturants");
-            DropIndex("dbo.ResturantReviews", new[] { "Resturant_Id" });
-            DropTable("dbo.ResturantReviews");
-            DropTable("dbo.Resturants");
+            DropForeignKey("dbo.RestaurantReviews", "RestaurantId", "dbo.Restaurants");
+            DropIndex("dbo.RestaurantReviews", new[] { "RestaurantId" });
+            DropTable("dbo.RestaurantReviews");
+            DropTable("dbo.Restaurants");
         }
     }
 }

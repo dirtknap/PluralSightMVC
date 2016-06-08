@@ -3,7 +3,10 @@ using PluralSightMVC.Models;
 
 namespace PluralSightMVC.Migrations
 {
+    using System;
+    using System.Data.Entity;
     using System.Data.Entity.Migrations;
+    using System.Linq;
 
     internal sealed class Configuration : DbMigrationsConfiguration<DataStoreDb>
     {
@@ -15,19 +18,19 @@ namespace PluralSightMVC.Migrations
 
         protected override void Seed(DataStoreDb context)
         {
-            context.Resturants.AddOrUpdate(r => r.Name,
-                new Resturant {Name = "Smash Burger", City = "Washington, D.C.", Country = "USA"},
-                new Resturant {Name = "Vlad's", City = "Crimea", Country = "Ukraine"},
-                new Resturant
+
+            context.Restaurants.AddOrUpdate(r => r.Name,
+                new Restaurant {Name = "Tasty Ghoul", City = "Baltimore", Country = "USA"},
+                new Restaurant {Name = "Stuffer Shack", City = "Seattle", Country = "USA"},
+                new Restaurant
                 {
-                    Name = "Martian Kitchen",
-                    City = "Eros",
-                    Country = "The Belt",
-                    Reviews =
-                        new List<ResturantReview>
-                        {
-                            new ResturantReview {Rating = 7, Body = "Ok service, great freeze dried krill patties."}
-                        }
+                    Name = "McDowels",
+                    City = "Detroit",
+                    Country = "USA",
+                    Reviews = new List<RestaurantReview>
+                    {
+                        new RestaurantReview() {Rating = 9, Body = "That stuff is G-U-D!", ReviewerName = "Eddie"}
+                    }
                 });
         }
     }

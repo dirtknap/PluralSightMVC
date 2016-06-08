@@ -13,7 +13,7 @@ namespace PluralSightMVC.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201605251749572_InitialCreate"; }
+            get { return "201606081859490_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source

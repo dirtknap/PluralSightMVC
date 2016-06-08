@@ -1,4 +1,4 @@
-﻿@model IEnumerable<PluralSightMVC.Models.Resturant>
+﻿@model IEnumerable<PluralSightMVC.Models.RestaurantListViewModel>
 
 
 @{
@@ -10,6 +10,7 @@
     <div>
         <h4>@item.Name</h4>
         <div>@item.City, @item.Country</div>
+        <div>Review: @item.CountOfReviews</div>
         <hr/>
     </div>
 }

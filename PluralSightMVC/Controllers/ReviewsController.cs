@@ -96,9 +96,9 @@ namespace PluralSightMVC.Controllers
 
 
         // test data
-        static List<Resturant> reviews = new List<Resturant>
+        static List<Restaurant> reviews = new List<Restaurant>
         {
-            new Resturant()
+            new Restaurant()
             {
                 Id = 1,
                 Name = "test1",
@@ -106,7 +106,7 @@ namespace PluralSightMVC.Controllers
                 Country = "country1",
   
             },
-            new Resturant()
+            new Restaurant()
             {
                 Id = 2,
                 Name = "test2",
@@ -114,7 +114,7 @@ namespace PluralSightMVC.Controllers
                 Country = "country2",
 
             },
-            new Resturant()
+            new Restaurant()
             {
                 Id = 3,
                 Name = "test3",
@@ -122,7 +122,7 @@ namespace PluralSightMVC.Controllers
                 Country =  "country3",
         
             },
-            new Resturant()
+            new Restaurant()
             {
                 Id = 4,
                 Name = "test4",
@@ -130,7 +130,7 @@ namespace PluralSightMVC.Controllers
                 Country =  "country4",
        
             },
-            new Resturant()
+            new Restaurant()
             {
                 Id = 5,
                 Name = "test5",

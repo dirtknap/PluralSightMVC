@@ -14,8 +14,8 @@ namespace PluralSightMVC.Models
             
         }
 
-        public DbSet<Resturant> Resturants { get; set; }
-        public DbSet<ResturantReview> Reviews { get; set; }
+        public DbSet<Restaurant> Restaurants { get; set; }
+        public DbSet<RestaurantReview> Reviews { get; set; }
 
     }
 }

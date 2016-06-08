@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PluralSightMVC.Models
 {
-    public class ResturantReview
+    public class RestaurantReview
     {
         
         public int Id { get; set; }
